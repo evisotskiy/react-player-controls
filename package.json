@@ -1,5 +1,5 @@
 {
-  "name": "react-player-controls",
+  "name": "react-player-controls-touch",
   "version": "0.0.1",
   "description": "React Media Player Controls fork created to fix mobile touch errors",
   "main": "dist/index.js",
