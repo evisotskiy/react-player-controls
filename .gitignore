@@ -41,3 +41,6 @@ jspm_packages
 # ------------------------
 
 dist
+
+# Local history
+.history

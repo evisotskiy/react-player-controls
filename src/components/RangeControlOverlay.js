@@ -53,6 +53,7 @@ class RangeControlOverlay extends Component {
 
     this.state = {
       isDragging: false,
+      currentValue: 0
     }
   }
 
@@ -113,6 +114,7 @@ class RangeControlOverlay extends Component {
     this.toggleSelection('none')
 
     onChange(value)
+    this.setState({ currentValue: value })
   }
 
   @autobind
@@ -125,9 +127,10 @@ class RangeControlOverlay extends Component {
     }
 
     const endValue = evt !== undefined
-      ? this.getValueFromInteractionPoint(evt.touches[0])
+      ? this.state.currentValue
       : null
     onChangeEnd(endValue)
+    this.setState({ currentValue: 0 })
 
     window.removeEventListener('touchmove', this.handleTouchMove)
     window.removeEventListener('touchend', this.handleTouchEnd)
